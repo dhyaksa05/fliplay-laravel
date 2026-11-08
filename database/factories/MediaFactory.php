@@ -16,9 +16,12 @@ class MediaFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
-        return [
-            //
-        ];
-    }
+{
+    return [
+        'title' => fake()->unique()->words(3, true),
+        'type' => fake()->randomElement(['anime', 'drama', 'manga', 'light novel']),
+        'genre' => fake()->randomElement(['Action', 'Drama', 'Romance', 'Fantasy', 'Comedy']),
+        'description' => fake()->sentence(),
+    ];
+}
 }
